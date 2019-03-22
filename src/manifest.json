@@ -54,5 +54,13 @@
 
     "background": {
         "scripts": ["background.js"]
-    }
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["tingle.min.js", "content_script.js"],
+            "css": ["tingle.min.css"]
+        }
+    ]
 }

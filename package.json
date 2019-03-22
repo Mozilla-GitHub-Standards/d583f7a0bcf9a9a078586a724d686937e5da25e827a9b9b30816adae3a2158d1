@@ -34,5 +34,8 @@
     "sinon-chai": "^3.0.0",
     "web-ext": "^2.9.3",
     "webextensions-jsdom": "^0.12.1"
+  },
+  "dependencies": {
+    "tingle.js": "^0.14.0"
   }
 }

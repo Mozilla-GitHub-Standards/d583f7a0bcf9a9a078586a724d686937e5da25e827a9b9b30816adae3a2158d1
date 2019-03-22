@@ -426,6 +426,12 @@ async function containFacebook (options) {
   return {cancel: true};
 }
 
+function handleContentScriptMessage(request, sender, sendResponse) {
+  console.log("request, sender, sendResponse: ", {request, sender, sendResponse});
+  browser.browserAction.openPopup();
+}
+
+
 (async function init () {
   await setupMACAddonListeners();
   macAddonEnabled = await isMACAddonEnabled();
@@ -460,5 +466,6 @@ async function containFacebook (options) {
 
   browser.tabs.onUpdated.addListener(tabUpdateListener);
 
+  browser.runtime.onMessage.addListener(handleContentScriptMessage);
   maybeReopenAlreadyOpenTabs();
 })();
